@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Registrada</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="containerVer">
+        <div class="logo">
+            <img src="../img/Escudo.png" alt="Logo">
+        </div>
+        <h2>Información Registrada</h2>
+        <table class="info">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Créditos</th>
+                    <th>Nota Mínima</th>
+                    <th>Asignaturas</th>
+                    <th>Sede</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Ingeniería de Sistemas</td>
+                    <td>160</td>
+                    <td>3.0</td>
+                    <td>
+                        <a href="verAsginaturas.html" >
+                            <button class="button">Ver Asignaturas</button>
+                        </a>
+                        <a href="../registrar/regAsignaturas.jsp" >
+                            <button class="button">Crear Asignatura</button>
+                        </a>
+                        <a href="../eliminar/eliminarAsginaturas.html" >
+                            <button class="button">Eliminar Asignatura</button>
+                        </a>
+                    </td>
+                    <td>Norte</td>
+                </tr>
+                <!-- Más filas pueden ser añadidas dinámicamente -->
+            </tbody>
+        </table>
+        <a href="../index.html" >
+            <button class="button">Volver</button>
+        </a>
+    </div>
+</body>
+</html>
