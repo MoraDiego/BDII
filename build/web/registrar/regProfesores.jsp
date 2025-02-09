@@ -1,3 +1,4 @@
+<%@ page import="DAOs.ProfesorDAO"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +14,7 @@
         </div>
         <div class="form">
             <h2>Registro de Profesores</h2>
-            <form action="#" method="POST">
+            <form action="." method="POST">
                 <label for="documento">Documento:</label>
                 <input type="text" id="documento" name="documento" required>
                 

@@ -19,7 +19,7 @@
             <img src="../img/Escudo.png" alt="Logo">
         </div>
         <div class="form">
-            <h2>Registro de Asignatura</h2>
+            <h2>Registro Asignatura</h2>
             <form action="#" method="POST">
                 <label for="codigo">Código:</label>
                 <input type="text" id="codigo" name="codigo" required>

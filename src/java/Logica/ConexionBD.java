@@ -48,12 +48,12 @@ public class ConexionBD {
         try {
             // Se registra el Driver y se crea la conexion
             //String url = "jdbc:oracle:thin:@localhost:1521:xe";
-            String url = "jdbc:postgresql://localhost:5432/ConsultasActividades";
+            String url = "jdbc:postgresql://localhost:5432/Chapinero";
             String usuario = "postgres";
             String password = "BDII"; //Debe reemplazarse por el password en su propia instalación
             Class.forName("org.postgresql.Driver").newInstance();
             conexion = DriverManager.getConnection(url, usuario, password);
-            conexion.setAutoCommit(false);
+            conexion.setAutoCommit(true);
         } catch (Exception e) {
             throw new CaException("ServiceLocator", "ERROR_CONEXION_BD " + e);
         }

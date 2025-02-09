@@ -1,3 +1,10 @@
+<%-- 
+    Document   : verCursos
+    Created on : 8 feb 2025, 19:09:27
+    Author     : diego
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,37 +22,33 @@
         <table class="info">
             <thead>
                 <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Créditos</th>
-                    <th>Nota Mínima</th>
-                    <th>Asignaturas</th>
-                    <th>Sede</th>
+                    <th>Pregrado</th>
+                    <th>Codigo</th>
+                    <th>Capacidad estudiantes</th>
+                    <th>Grupos</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>001</td>
-                    <td>Ingeniería de Sistemas</td>
+                    <td>Ing Sis</td>
+                    <td>01</td>
                     <td>160</td>
-                    <td>3.0</td>
                     <td>
-                        <a href="verCursos.jsp" >
-                            <button class="button">Ver Cursos</button>
+                        <a href="../ver/verGrupos.html" >
+                            <button class="button">Ver Grupos</button>
                         </a>
-                        <a href="../registrar/regCursos.jsp" >
-                            <button class="button">Crear Curso</button>
+                        <a href="../registrar/regGrupos.jsp" >
+                            <button class="button">Crear Grupo</button>
                         </a>
-                        <a href="../eliminar/eliminarCursos.jsp" >
-                            <button class="button">Eliminar Curso</button>
+                        <a href="../eliminar/cerrarGrupos.html" >
+                            <button class="button">Cerrar Grupo</button>
                         </a>
                     </td>
-                    <td>Norte</td>
                 </tr>
                 <!-- Más filas pueden ser añadidas dinámicamente -->
             </tbody>
         </table>
-        <a href="../index.html" >
+        <a href="verPregrados.html" >
             <button class="button">Volver</button>
         </a>
     </div>
