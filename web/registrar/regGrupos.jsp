@@ -24,7 +24,7 @@
                 <label for="codigo">Código:</label>
                 <input type="text" id="codigo" name="codigo" required>
 
-                <label for="curso">Curso:</label>
+                <label for="curso">Nombre:</label>
                 <input type="text" id="curso" name="curso" required>
                 
                 <label for="semestre">Semestre:</label>
@@ -32,7 +32,7 @@
                 
                 <button type="submit" class="button">Registrar</button>
             </form>
-            <a href="../index.html" >
+            <a href="../ver/verCursos.jsp" >
                 <button class="button">Volver</button>
             </a>
         </div>

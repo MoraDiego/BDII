@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información Registrada</title>
+    <title>Asignaturas</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <div class="logo">
             <img src="../img/Escudo.png" alt="Logo">
         </div>
-        <h2>Información Registrada</h2>
+        <h2>Asignaturas</h2>
         <table class="info">
             <thead>
                 <tr>
@@ -30,10 +30,9 @@
                     <td>Diego</td>
                     <td>X</td>
                 </tr>
-                <!-- Más filas pueden ser añadidas dinámicamente -->
             </tbody>
         </table>
-        <a href="verGrupos.html" >
+        <a href="verGrupos.jsp" >
             <button class="button">Volver</button>
         </a>
     </div>

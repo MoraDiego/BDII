@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información Registrada</title>
+    <title>Pregrados</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -11,21 +11,24 @@
         <div class="logo">
             <img src="../img/Escudo.png" alt="Logo">
         </div>
-        <h2>Información Registrada</h2>
+        <h2>Pregrados</h2>
         <table class="info">
             <thead>
                 <tr>
-                    <th>Código</th>
+                    <th>Codigo</th>
                     <th>Nombre</th>
-                    <th>Créditos</th>
-                    <th>Nota Mínima</th>
+                    <th>Creditos</th>
+                    <th>Nota Mi�nima</th>
                     <th>Asignaturas</th>
                     <th>Sede</th>
                 </tr>
             </thead>
             <tbody>
+                <% 
+                    for(int i=0;i<10;i++){
+                %>
                 <tr>
-                    <td>001</td>
+                    <td><% out.println(i);%></td>
                     <td>Ingeniería de Sistemas</td>
                     <td>160</td>
                     <td>3.0</td>
@@ -33,15 +36,17 @@
                         <a href="verCursos.jsp" >
                             <button class="button">Ver Cursos</button>
                         </a>
-                        <a href="../registrar/regCursos.jsp" >
-                            <button class="button">Crear Curso</button>
-                        </a>
+                        <form action="../registrar/regCursos.jsp" method="POST">
+                            <button class="button" name="preg" type="submit" value=<%=i%>>Crear Curso</button>
+                        </form>
+                            
                         <a href="../eliminar/eliminarCursos.jsp" >
                             <button class="button">Eliminar Curso</button>
                         </a>
                     </td>
                     <td>Norte</td>
                 </tr>
+                <%}%>
                 <!-- Más filas pueden ser añadidas dinámicamente -->
             </tbody>
         </table>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información Registrada</title>
+    <title>Grupos</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <div class="logo">
             <img src="../img/Escudo.png" alt="Logo">
         </div>
-        <h2>Información Registrada</h2>
+        <h2>Grupos</h2>
         <table class="info">
             <thead>
                 <tr>
@@ -24,25 +24,28 @@
                 </tr>
             </thead>
             <tbody>
+                <% 
+                    for(int i=0;i<10;i++){
+                %>
                 <tr>
-                    <td>Ingeniería de Sistemas</td>
+                    <td>Ingenieria�a de Sistemas</td>
                     <td>001</td>
                     <td>001</td>
                     <td>Bases II</td>
                     <td>10</td>
                     <td>
-                        <a href="../ver/verAsignaturas.html" >
+                        <a href="../ver/verAsignaturas.jsp" >
                             <button class="button">Ver Asignaturas</button>
                         </a>
-                        <a href="../registrar/regCursos.jsp" >
-                            <button class="button">Crear Asignatura</button>
-                        </a>
-                        <a href="../eliminar/cerrarCursos.html" >
+                        <form action="../registrar/regAsignaturas.jsp" method="POST">
+                            <button class="button" name="grupo" type="submit" value=<%=i%>>Crear Asignatura</button>
+                        </form>
+                        <a href="../eliminar/cerrarAsignaturas.html" >
                             <button class="button">Cerrar Asignatura</button>
                         </a>
                     </td>
                 </tr>
-                <!-- Más filas pueden ser añadidas dinámicamente -->
+                <%}%>
             </tbody>
         </table>
         <a href="verCursos.jsp" >

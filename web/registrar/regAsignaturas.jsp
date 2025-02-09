@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Pregrado</title>
+    <title>Registro de Asignaturas</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -20,16 +20,21 @@
         </div>
         <div class="form">
             <h2>Registro Asignatura</h2>
-            <form action="#" method="POST">
+            <form action="regAsignaturas.jsp" method="POST">
                 <label for="codigo">Código:</label>
                 <input type="text" id="codigo" name="codigo" required>
 
                 <label for="horas">Horas semanales:</label>
                 <input type="number" id="horas" name="horas" min="1" required>
                 
+                <label for="profesor">Profesor:</label>
+                <select id="profesor" name="profesor" required>
+                    <option value="x">X</option>
+                </select>
+                
                 <button type="submit" class="button">Registrar</button>
             </form>
-            <a href="../index.html" >
+            <a href="../ver/verGrupos.jsp" >
                 <button class="button">Volver</button>
             </a>
         </div>

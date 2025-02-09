@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Pregrado</title>
+    <title>Registro de Curso</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -20,10 +20,12 @@
         </div>
         <div class="form">
             <h2>Registro de Curso</h2>
-            <form action="#" method="POST">
+            <form action="regCursos.jsp" method="POST">
+                <label for="codigo"><% out.println(request.getParameter("preg"));%></label>
+                
                 <label for="codigo">Código:</label>
                 <input type="text" id="codigo" name="codigo" required>
-
+                
                 <label for="capacidad">Capacidad de estudiantes:</label>
                 <input type="number" id="capacidad" name="capacidad" min="1" required>
                 
