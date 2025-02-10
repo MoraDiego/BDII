@@ -50,7 +50,7 @@ public class ConexionBD {
             //String url = "jdbc:oracle:thin:@localhost:1521:xe";
             String url = "jdbc:postgresql://localhost:5432/Chapinero";
             String usuario = "postgres";
-            String password = "BDII"; //Debe reemplazarse por el password en su propia instalación
+            String password = "yo042002"; //Debe reemplazarse por el password en su propia instalación
             Class.forName("org.postgresql.Driver").newInstance();
             conexion = DriverManager.getConnection(url, usuario, password);
             conexion.setAutoCommit(true);
@@ -83,17 +83,9 @@ public class ConexionBD {
      * pueda utilizar
      */
     public synchronized void liberarConexion() {
-        while (conexionLibre) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        conexionLibre = true;
-        notify();
-    }
+    conexionLibre = true;
+    notify(); // Notifica a otros hilos que la conexión está disponible
+}
 
     /**
      * Cierra la conexion a la base de datos cuando se termina de ejecutar el

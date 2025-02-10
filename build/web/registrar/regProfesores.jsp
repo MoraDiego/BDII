@@ -30,12 +30,19 @@
                 <label for="correo">Correo:</label>
                 <input type="email" id="correo" name="correo" required>
 
-                <label for="categoria">Categoria:</label>
-                <select id="categoria" name="categoria" required>
-                    <option value="1">Norte</option>
-                    <option value="2">Sur</option>
-                    <option value="3">Centro</option>
-                </select>
+                <label for="categoria">Categoría:</label>
+<select id="categoria" name="categoria" required>
+    <option value="1">Instructor Auxiliar</option>
+    <option value="5">Instructor</option>
+    <option value="10">Profesor Asistente</option>
+    <option value="15">Profesor Asociado</option>
+    <option value="20">Profesor Titular</option>
+    <option value="30">Profesor Senior</option>
+    <option value="40">Investigador Asociado</option>
+    <option value="50">Investigador Senior</option>
+    <option value="70">Catedrático Distinguido</option>
+    <option value="99">Profesor Emérito</option>
+</select>
                 
                 <button type="submit" class="button">Registrar</button>
             </form>
