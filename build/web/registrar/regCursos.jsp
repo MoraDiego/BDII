@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="DAOs.CursoDAO" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,11 +30,26 @@
                 <label for="capacidad">Capacidad de estudiantes:</label>
                 <input type="number" id="capacidad" name="capacidad" min="1" required>
                 
-                <button type="submit" class="button">Registrar</button>
+                <button type="submit" class="button" name="preg" value=<%=request.getParameter("preg")%>>Registrar</button>
             </form>
             <a href="../index.html" >
                 <button class="button">Volver</button>
             </a>
+            <%
+                String referer = request.getHeader("Referer");
+                if (request.getMethod().equals("POST") && referer.contains("registrar/regCursos.jsp")) {
+                    String codigo = request.getParameter("codigo");
+                    String cod_pregrado = request.getParameter("preg");
+                    int capacidad_estudiantes = Integer.parseInt(request.getParameter("capacidad"));
+
+                    boolean registrado = CursoDAO.registrarCurso(codigo, cod_pregrado, capacidad_estudiantes);
+                    if (registrado) {
+                        out.println("<p>Registro exitoso</p>");
+                    } else {
+                        out.println("<p>Error al registrar</p>");
+                    }
+                }
+            %>
         </div>
     </div>
 </body>

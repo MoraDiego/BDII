@@ -14,18 +14,15 @@ import java.sql.SQLException;
  * @author diego
  */
 public class CursoDAO {
-    public static boolean registrarCurso(String codigo, String capacidad_estudiantes,int cod_pregrado) {
-        String sql = "INSERT INTO curso (cod_curso, capacidad_estudiantes, cod_pregrado)"
+    public static boolean registrarCurso(String codigo,String cod_pregrado, int capacidad_estudiantes) {
+        String sql = "INSERT INTO curso (cod_curso, cod_pregrado, capacidad_estudiantes)"
                 + " VALUES (?, ?, ?)";
-        try{
-            Connection conn=ConexionBD.getInstance().tomarConexion();
-            PreparedStatement stmt = conn.prepareStatement(sql);
+        try(PreparedStatement stmt = ConexionBD.getInstance().tomarConexion().prepareStatement(sql)){
             stmt.setString(1, codigo);
-            stmt.setString(2, capacidad_estudiantes);
-            stmt.setInt(3, cod_pregrado);
+            stmt.setString(2, cod_pregrado);
+            stmt.setInt(3, capacidad_estudiantes);
             boolean exec=stmt.executeUpdate() > 0;
             ConexionBD.getInstance().liberarConexion();
-            ConexionBD.getInstance().close();
             return exec;
         } catch (SQLException e) {
             e.printStackTrace();

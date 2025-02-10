@@ -61,6 +61,7 @@ public class ConexionBD {
 
     /**
      * Toma la conexion para que ningun otro proceso la puedan utilizar
+     * Toma la conexion para que ningun otro proceso la puedan utilizar
      *
      * @return da la conexion a la base de datos
      */
@@ -83,17 +84,9 @@ public class ConexionBD {
      * pueda utilizar
      */
     public synchronized void liberarConexion() {
-        while (conexionLibre) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        conexionLibre = true;
-        notify();
-    }
+    conexionLibre = true;
+    notify(); // Notifica a otros hilos que la conexión está disponible
+}
 
     /**
      * Cierra la conexion a la base de datos cuando se termina de ejecutar el

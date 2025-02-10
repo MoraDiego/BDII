@@ -1,3 +1,7 @@
+<%@ page import="DAOs.PregradoDAO" %>
+<%@ page import="Logica.Pregrado" %>
+<%@ page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,42 +19,46 @@
         <table class="info">
             <thead>
                 <tr>
-                    <th>Codigo</th>
+                    <th>Código</th>
                     <th>Nombre</th>
-                    <th>Creditos</th>
-                    <th>Nota Mi­nima</th>
-                    <th>Asignaturas</th>
+                    <th>Créditos</th>
+                    <th>Nota Mínima</th>
+                    <th>Acciones</th>
                     <th>Sede</th>
                 </tr>
             </thead>
             <tbody>
-                <% 
-                    for(int i=0;i<10;i++){
+                <%
+                    // Obtener la lista de pregrados desde la base de datos
+                    List<Pregrado> pregrados = PregradoDAO.consultarPregrados();
+
+                    // Iterar sobre la lista y mostrar cada pregrado en una fila de la tabla
+                    for (Pregrado pregrado : pregrados) {
                 %>
                 <tr>
-                    <td><% out.println(i);%></td>
-                    <td>IngenierÃ­a de Sistemas</td>
-                    <td>160</td>
-                    <td>3.0</td>
+                    <td><%= pregrado.getCodigo() %></td>
+                    <td><%= pregrado.getNombre() %></td>
+                    <td><%= pregrado.getCreditos() %></td>
+                    <td><%= pregrado.getNotaMinima() %></td>
                     <td>
-                        <a href="verCursos.jsp" >
+                        <a href="verCursos.jsp">
                             <button class="button">Ver Cursos</button>
                         </a>
                         <form action="../registrar/regCursos.jsp" method="POST">
-                            <button class="button" name="preg" type="submit" value=<%=i%>>Crear Curso</button>
+                            <button class="button" name="preg" type="submit" value="<%= pregrado.getCodigo()%>">Crear Curso</button>
                         </form>
-                            
-                        <a href="../eliminar/eliminarCursos.jsp" >
+                        <a href="../eliminar/eliminarCursos.jsp">
                             <button class="button">Eliminar Curso</button>
                         </a>
                     </td>
-                    <td>Norte</td>
+                    <td><%= pregrado.getSede() %></td>
                 </tr>
-                <%}%>
-                <!-- MÃ¡s filas pueden ser aÃ±adidas dinÃ¡micamente -->
+                <%
+                    }
+                %>
             </tbody>
         </table>
-        <a href="../index.html" >
+        <a href="../index.html">
             <button class="button">Volver</button>
         </a>
     </div>

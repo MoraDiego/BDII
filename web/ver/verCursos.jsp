@@ -49,7 +49,6 @@
                     </td>
                 </tr>
                 <%}%>
-                <!-- Más filas pueden ser añadidas dinámicamente -->
             </tbody>
         </table>
         <a href="verPregrados.jsp" >

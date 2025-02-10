@@ -1,3 +1,7 @@
+<%@ page import="DAOs.ProfesorDAO" %>
+<%@ page import="Logica.Profesor" %>
+<%@ page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,25 +21,42 @@
                 <tr>
                     <th>Documento</th>
                     <th>Nombre</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
                     <th>Correo</th>
-                    <th>Categoria</th>
+                    <th>Categoría</th>
                 </tr>
             </thead>
             <tbody>
+                <%
+                    // Obtener la lista de profesores desde la base de datos
+                    List<Profesor> profesores = ProfesorDAO.consultarProfesores();
+
+                    if (profesores.isEmpty()) {
+                %>
                 <tr>
-                    <td>001</td>
-                    <td>Diego Fernando Mora Guevara</td>
-                    <td>AC 8 SUR #40D-07</td>
-                    <td>3143034626</td>
-                    <td>diego.fmg@live.com</td>
-                    <td>Planta</td>
+                    <td colspan="6">No hay profesores registrados.</td>
                 </tr>
-                <!-- MÃ¡s filas pueden ser aÃ±adidas dinÃ¡micamente -->
+                <%
+                    } else {
+                        // Iterar sobre la lista y mostrar cada profesor en una fila de la tabla
+                        for (Profesor profesor : profesores) {
+                %>
+                <tr>
+                    <td><%= profesor.getDocumento() %></td>
+                    <td><%= profesor.getNombre() %></td>
+                    <td><%= profesor.getDireccion() %></td>
+                    <td><%= profesor.getTelefono() %></td>
+                    <td><%= profesor.getEmail() %></td>
+                    <td><%= profesor.getCategoria() %></td>
+                </tr>
+                <%
+                        }
+                    }
+                %>
             </tbody>
         </table>
-        <a href="../index.html" >
+        <a href="../index.html">
             <button class="button">Volver</button>
         </a>
     </div>

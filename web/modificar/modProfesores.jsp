@@ -31,9 +31,16 @@
 
                 <label for="categoria">Categoria:</label>
                 <select id="categoria" name="categoria" required>
-                    <option value="Planta">Norte</option>
-                    <option value="Catedra">Sur</option>
-                    <option value="Vincuacion Especial">Centro</option>
+                    <option value="1">Instructor Auxiliar</option>
+                    <option value="5">Instructor</option>
+                    <option value="10">Profesor Asistente</option>
+                    <option value="15">Profesor Asociado</option>
+                    <option value="20">Profesor Titular</option>
+                    <option value="30">Profesor Senior</option>
+                    <option value="40">Investigador Asociado</option>
+                    <option value="50">Investigador Senior</option>
+                    <option value="70">Catedrático Distinguido</option>
+                    <option value="99">Profesor Emérito</option>
                 </select>
                 
                 <button type="submit" class="button">Modificar</button>

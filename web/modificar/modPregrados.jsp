@@ -14,16 +14,16 @@
         <div class="form">
             <h2>Modificar Pregrado</h2>
             <form action="#" method="POST">
-                <label for="codigo">Código:</label>
+                <label for="codigo">Codigo:</label>
                 <input type="text" id="codigo" name="codigo" required>
                 
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
                 
-                <label for="creditos">Cantidad de Créditos:</label>
+                <label for="creditos">Cantidad de Creditos:</label>
                 <input type="number" id="creditos" name="creditos" min="1" required>
                 
-                <label for="nota">Nota Mínima Aprobatoria:</label>
+                <label for="nota">Nota Mi�nima Aprobatoria:</label>
                 <input type="number" id="nota" name="nota" min="0" max="5" step="0.1" required>
                 
                 <label for="sede">Sede:</label>

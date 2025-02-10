@@ -15,16 +15,13 @@ import java.sql.SQLException;
 public class GrupoDAO {
     public static boolean registrarGrupo(String codigo, String cod_curso,String curso, int semestre) {
         String sql = "INSERT INTO grupo (cod_grupo, cod_curso, curso, semestre) VALUES (?, ?, ?, ?)";
-        try{
-            Connection conn=ConexionBD.getInstance().tomarConexion();
-            PreparedStatement stmt = conn.prepareStatement(sql);
+        try(PreparedStatement stmt = ConexionBD.getInstance().tomarConexion().prepareStatement(sql)){
             stmt.setString(1, codigo);
             stmt.setString(2, cod_curso);
             stmt.setString(3, curso);
             stmt.setInt(4, semestre);
             boolean exec=stmt.executeUpdate() > 0;
             ConexionBD.getInstance().liberarConexion();
-            ConexionBD.getInstance().close();
             return exec;
         } catch (SQLException e) {
             e.printStackTrace();
