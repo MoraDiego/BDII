@@ -14,7 +14,7 @@
         </div>
         <div class="form">
             <h2>Registro de Profesores</h2>
-            <form action="." method="POST">
+            <form action="regProfesores.jsp" method="POST">
                 <label for="documento">Documento:</label>
                 <input type="text" id="documento" name="documento" required>
                 
@@ -32,9 +32,9 @@
 
                 <label for="categoria">Categoria:</label>
                 <select id="categoria" name="categoria" required>
-                    <option value="Planta">Norte</option>
-                    <option value="Catedra">Sur</option>
-                    <option value="Vincuacion Especial">Centro</option>
+                    <option value="1">Norte</option>
+                    <option value="2">Sur</option>
+                    <option value="3">Centro</option>
                 </select>
                 
                 <button type="submit" class="button">Registrar</button>
@@ -42,6 +42,24 @@
             <a href="../index.html" >
                 <button class="button">Volver</button>
             </a>
+            <%
+                if (request.getMethod().equals("POST")) {
+                    String documento = request.getParameter("documento");
+                    String nombre = request.getParameter("nombre");
+                    String direccion = request.getParameter("direccion");
+                    String telefono = request.getParameter("telefono");
+                    String correo = request.getParameter("correo");
+                    int categoria = Integer.parseInt(request.getParameter("categoria"));
+                    boolean registrado = ProfesorDAO.registrarProfesor(documento,
+                    categoria, nombre, direccion, telefono, correo);
+
+                    if (registrado) {
+                        out.println("<p>Registro exitoso</p>");
+                    } else {
+                        out.println("<p>Error al registrar</p>");
+                    }
+                }
+            %>
         </div>
     </div>
 </body>

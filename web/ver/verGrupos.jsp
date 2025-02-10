@@ -15,7 +15,6 @@
         <table class="info">
             <thead>
                 <tr>
-                    <th>Pregrado</th>
                     <th>Codigo Curso</th>
                     <th>Codigo Grupo</th>
                     <th>Nombre</th>
@@ -28,7 +27,6 @@
                     for(int i=0;i<10;i++){
                 %>
                 <tr>
-                    <td>Ingenieria­a de Sistemas</td>
                     <td>001</td>
                     <td>001</td>
                     <td>Bases II</td>

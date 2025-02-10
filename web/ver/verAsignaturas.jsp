@@ -15,8 +15,6 @@
         <table class="info">
             <thead>
                 <tr>
-                    <th>Pregrado</th>
-                    <th>Codigo Curso</th>
                     <th>Nombre Grupo</th>
                     <th>Codigo Asignatura</th>
                     <th>Horas Semanales</th>
@@ -24,8 +22,6 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>001</td>
-                    <td>10-12</td>
                     <td>Caldas</td>
                     <td>Diego</td>
                     <td>X</td>
