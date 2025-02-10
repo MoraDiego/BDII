@@ -15,7 +15,8 @@ import java.sql.SQLException;
  */
 public class CursoDAO {
     public static boolean registrarCurso(String codigo, String capacidad_estudiantes,int cod_pregrado) {
-        String sql = "INSERT INTO curso (cod_curso, capacidad_estudiantes, cod_pregrado) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO curso (cod_curso, capacidad_estudiantes, cod_pregrado)"
+                + " VALUES (?, ?, ?)";
         try{
             Connection conn=ConexionBD.getInstance().tomarConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);

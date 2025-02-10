@@ -13,8 +13,10 @@ import java.sql.SQLException;
  * @author diego
  */
 public class PregradoDAO {
-    public static boolean registrarPregrado(String codigo, String nombre, int creditos, int notaMinima, String sede) {
-        String sql = "INSERT INTO pregrado (cod_pregrado, nombre, creditos, nota_minima, sede) VALUES (?, ?, ?, ?, ?)";
+    public static boolean registrarPregrado(String codigo, String nombre, int creditos,
+            int notaMinima, String sede) {
+        String sql = "INSERT INTO pregrado (cod_pregrado, nombre, creditos, nota_minima,"
+                + " sede) VALUES (?, ?, ?, ?, ?)";
         try{
             Connection conn=ConexionBD.getInstance().tomarConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);

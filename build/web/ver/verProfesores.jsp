@@ -21,7 +21,6 @@
                     <th>Telefono</th>
                     <th>Correo</th>
                     <th>Categoria</th>
-                    <th>Materias</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,14 +31,6 @@
                     <td>3143034626</td>
                     <td>diego.fmg@live.com</td>
                     <td>Planta</td>
-                    <td>
-                        <ol>
-                            <li>A</li>
-                            <li>B</li>
-                            <li>C</li>
-                            <li>D</li>
-                        </ol>
-                    </td>
                 </tr>
                 <!-- Más filas pueden ser añadidas dinámicamente -->
             </tbody>
