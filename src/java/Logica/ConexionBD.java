@@ -61,6 +61,7 @@ public class ConexionBD {
 
     /**
      * Toma la conexion para que ningun otro proceso la puedan utilizar
+     * Toma la conexion para que ningun otro proceso la puedan utilizar
      *
      * @return da la conexion a la base de datos
      */
