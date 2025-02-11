@@ -1,9 +1,3 @@
-<%-- 
-    Document   : regCursos
-    Created on : 7 feb 2025, 21:37:41
-    Author     : diego
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="DAOs.CursoDAO" %>
 <!DOCTYPE html>
@@ -22,31 +16,52 @@
         <div class="form">
             <h2>Registro de Curso</h2>
             <form action="regCursos.jsp" method="POST">
-                <label for="codigo"><% out.println(request.getParameter("preg"));%></label>
+                <!-- Código del Pregrado -->
+                <label for="codigo"><% out.println(request.getParameter("preg")); %></label>
                 
-                <label for="codigo">Código:</label>
+                <!-- Código del Curso -->
+                <label for="codigo">Código del Curso:</label>
                 <input type="text" id="codigo" name="codigo" required>
                 
+                <!-- Capacidad de Estudiantes -->
                 <label for="capacidad">Capacidad de estudiantes:</label>
                 <input type="number" id="capacidad" name="capacidad" min="1" required>
                 
-                <button type="submit" class="button" name="preg" value=<%=request.getParameter("preg")%>>Registrar</button>
+                <!-- Selección de Sede -->
+                <label for="sede">Sede:</label>
+                <select id="sede" name="sede" required>
+                    <option value="chapinero">Chapinero</option>
+                    <option value="macarena">Macarena</option>
+                    <option value="ciudad bolivar">Ciudad Bolívar</option>
+                </select><br><br>
+                
+                <!-- Botón de Registro -->
+                <button type="submit" class="button" name="preg" value="<%=request.getParameter("preg")%>">Registrar</button>
             </form>
-            <a href="../index.html" >
+            
+            <!-- Botón para Volver -->
+            <a href="../index.html">
                 <button class="button">Volver</button>
             </a>
+
+            <!-- Procesamiento del Formulario -->
             <%
                 String referer = request.getHeader("Referer");
                 if (request.getMethod().equals("POST") && referer.contains("registrar/regCursos.jsp")) {
+                    // Obtener los parámetros del formulario
                     String codigo = request.getParameter("codigo");
                     String cod_pregrado = request.getParameter("preg");
                     int capacidad_estudiantes = Integer.parseInt(request.getParameter("capacidad"));
+                    String sede = request.getParameter("sede"); // Nueva variable para la sede
 
-                    boolean registrado = CursoDAO.registrarCurso(codigo, cod_pregrado, capacidad_estudiantes);
+                    // Registrar el curso usando el DAO
+                    boolean registrado = CursoDAO.registrarCurso(codigo, cod_pregrado, capacidad_estudiantes, sede);
+
+                    // Mostrar mensaje de éxito o error
                     if (registrado) {
-                        out.println("<p>Registro exitoso</p>");
+                        out.println("<p style='color: green;'>Registro exitoso en " + sede.toUpperCase() + "</p>");
                     } else {
-                        out.println("<p>Error al registrar</p>");
+                        out.println("<p style='color: red;'>Error al registrar el curso en " + sede.toUpperCase() + "</p>");
                     }
                 }
             %>
